@@ -1,0 +1,76 @@
+body {
+    font-size: 2em;
+    --color-title: blue;
+    --color-subtitle: red;
+}
+
+/* Selector Hijo directo */
+/* Todo ul que sea hijo directo de li desaparecera*/
+li > ul {
+    display: none;
+}
+
+li:hover ul {
+    display: block;
+} 
+
+/*Selector Hermano siguiente*/
+.subtitle {
+    font-size: .5em;
+    margin: 0;
+}
+
+.titlteOne {
+    color: var(--color-title);
+}
+
+.titleTwo {
+    color: var(--color-subtitle)
+}
+
+.titlteOne + .subtitle {
+    color: var(--color-title);
+}
+
+.titleTwo + .subtitle {
+    color: var(--color-subtitle)
+}
+
+/* Selector de atributo .- Este nos sirve para seleccionar elementos con atributos
+especificos de html como ser input del tipo text, date, submit,etc. Y aplicarles
+estilos.*/
+[type="text"] {
+    border: 1px solid dodgerblue;
+}
+
+[type="text"], [type="email"], [type="password"] {
+    color: navy;
+}
+
+/*Aplicando estilos a todos los elementos html que tengan el atributo required*/
+[required] {
+    border: 1px solid red;
+}
+
+
+
+/* Selector de atributo que contiene */
+/* En este caso hay dos clases .button-cta y .button-alert; con [class*="button-"]
+estamos diciendo que aplicaremos los estilos que definimos a todas las clases que
+tengan en su nombre button-, es por eso que estos estilos se aplican a estas dos
+clases, y tambien damos sus estilos individualmente ya llamando a sus clases
+*/
+[class*="button-"] {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 1em;
+    padding: 1em 2em;
+}
+
+.button-cta {
+    background: orange;
+}
+.button-alert {
+    background: red;
+}

@@ -1,0 +1,13 @@
+/* Se deben declarar las variables en el root y antes siempre deben ir con dos guiones */
+:root {
+    --myColor: green;
+}
+
+body {
+    background: var(--myColor);
+}
+
+h1 {
+    background: white;
+    color: var(--myColor);
+}
