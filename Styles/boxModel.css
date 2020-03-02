@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 2em;
+}
+
+/* Primera parte */
+
+/* inline -> Las etiquetas con este display no tienen width ni height, siempre
+            se manejaran de acuerdo a su contenido (span, a).
+   block -> Las etiquetas con este display se rigen a su width y height, siempre
+            ocuparan todo el width de su contenedor por defecto (div, p, h1, etc.)
+   inline-block -> Estas etiquetas tendran la fusion de ambos, mantendran un forma
+            de inline para su entorno pero podemos darle un width y un height. */
+
+
+
+.to-inline {
+    margin: 1px;
+    background: yellow;
+    display: inline;
+}
+
+.to-block {
+    margin: 1px;
+    background: coral;
+    display: block;
+}
+
+.to-mix-line-block {
+    margin: 1px;
+    background: cornflowerblue;
+    display: inline-block;
+}
+
+
+/* Segunda parte box model */
+
+.box {
+    background: yellow;
+    background-clip: content-box;
+    /*BOX MODEL*/
+    border: 30px solid black;
+    width: 400px;
+    height: 300px;
+    padding: 50px;
+    margin: 50px;
+
+    /* Calculara el tamaño width y height de acurdo al borde de la caja */
+    box-sizing: border-box;
+}
+
+/* Tercer parte MARGIN */
+
+[class*="box-"] {
+    background: yellow;
+    padding: 50px;
+    width: 200px;
+    float: left;
+}
+
+.box-uno {
+    float: left;
+    /* declaracion A */
+    /* margin-top: 50px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 50px; */
+
+    /* declaracion B en sentido del reloj SHORTHAND*/
+    margin: 50px 60px 50px 60px;
+
+    /* declaracion C |top y bottom| |left rigth|  */
+    /* margin: 50px 60px; */
+
+    /* A, B, C hacen lo mismo */
+}
+
+p {
+    clear: both;
+    background: pink;
+}
+
+/* Para centrar horizontalmente elementos por el margen
+auto para izquierda y derecha declarados!. Y el contenedor
+debe tener definida su anchura*/
+.tres {
+    width: 60%;
+    background: lime;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+
+/* Cuarta parte COLAPSO DE MARGENES 
+Una buena practica es que se hagan margenes en un solo sentido y este sea
+haci el bottom de los elementos.*/
+[class*="article-"] {
+    background: lime;
+}
+
+/* Cuando declaramos los margenes en este caso se pensaria que los
+elementos se separaran por un total de 260px; ya que uno empujara abajo
+60px al de abajo y el de abajo se alejara 200px hacia abajo respecto del
+de arriba. PERO NO SUCEDE ESO, lo que sucede es que solo tomara el margin
+del mayor en este caso lo unico que se aplicara es que el de abajo se aleje
+200px del de arriba ya que es el MAYOR. */
+.article-one {
+    margin-bottom: 60px;
+}
+.article-two {
+    margin-top: 200px;
+}
+
+
+/* Quinta parte padding */
+.article-padding {
+    background: mediumspringgreen;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    /* Padding se aplica igual a margin top, right, bottom, left */
+    padding: 10px 25px;
+    text-align: justify;
+}
+
+/*Un hack para hacer un contenedor de video responsivo en un unico div en el documento*/
+.for-video {
+    background: orange;
+    padding-bottom: 56.25%;
+}
