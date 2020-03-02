@@ -1,0 +1,37 @@
+:root {
+    --myColor: brown;
+}
+
+/* Initial -> propiedad con valor inicial de html, rompe la herenecia
+   Inherint -> heredara esa propiedad de su padre */
+
+/*Con initial para los span ya no heredara el tamaño de h1, sino
+tendra el estado inicial de las etiquetas span*/
+span {
+    font-size: .5em;
+}
+
+p {
+    color: var(--myColor);
+}
+
+/* Con esto heredara el color de su padre, en este caso p */
+a {
+    color: inherit;
+}
+
+ul {
+    color: red;
+}
+
+li {
+    color: initial;
+}
+
+ul span {
+    font-size: inherit;
+}
+
+.last {
+    color: var(--myColor);
+}
