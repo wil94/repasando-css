@@ -1,0 +1,104 @@
+* {
+    /* Corrigiendo que el borde sume tamaño a su caja, sino que ahora
+    el borde estara calculado en su tamaño dentro de su caja. */
+    box-sizing: border-box;
+}
+
+.box-border-ini {
+    width: 400px;
+    height: 300px;
+    background: red;
+    margin: 100px auto;
+    /* El borde es una propiedad dentro del contenedor (caja) 
+    "No se dibuja externamente de la caja como margin" 
+    ... tamaño del ancho del borde  tipo(punteado)  color*/
+    border: 140px dotted black;
+}
+
+.box-border-props {
+    width: 400px;
+    height: 300px;
+    background: grey;
+    margin: 100px auto;
+    /* Como en margin y padding las propiedades color, style y width tienen
+    top, right, bottom, left y sus respectivos shorthands*/
+    border-color: lightseagreen blue black lime;
+    border-style: solid dotted;
+    border-width: 20px;
+    /* Tambien se puede hacer shorthand para un lado del borde */
+    /*border-top: 40px solid blackr;*/
+}
+
+.box-border-radius {
+    width: 400px;
+    height: 300px;
+    background: orange;
+    margin: 100px auto;
+    /* Se da el valor a aplicarse en cada esquina, en su shorthand sera empezando
+    de la esquina superior izquierda y el flujo como en el margin */
+    /* border-radius: 10px 40px 80px 120px; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 80px;
+    border-bottom-left-radius: 120px;
+}
+
+.box-logo-utube {
+    width: 400px;
+    height: 300px;
+    background: red;
+    margin: 100px auto;
+    /* Declarando variables */
+    --border-rad-x: 80px;
+    --border-rad-y: 40px;
+    /* para centrar verticalmente */
+    padding-top: 0.1px;
+    /* Cada esquina de borde puede ser afectada por valores de su eje x y */
+    border-top-left-radius: var(--border-rad-x) var(--border-rad-y);
+    border-top-right-radius: var(--border-rad-x) var(--border-rad-y);
+    border-bottom-right-radius: var(--border-rad-x) var(--border-rad-y);
+    border-bottom-left-radius: var(--border-rad-x) var(--border-rad-y);
+    /* Otra forma de declarar lo mismo */
+    /* border-radius: x x x x / y y y y; */
+}
+
+.btn-play {
+    width: 250px;
+    height: 150px;
+    margin-top: 75px;
+    margin-left: 75px;
+    border:  80px solid;
+    border-color: transparent transparent transparent white;
+    /* background: white transparent; */
+}
+
+
+/* OUTLINE.- Es una propiedad mas de debuggeo del modelo de caja, esta a diferencia 
+del border se dibuja por fuera de la caja, posee las mismas caracteristicas de 
+border */
+.outline-class {
+    width: 400px;
+    height: 300px;
+    margin: 100px auto;
+    background: purple;
+    outline: 20px solid red;
+}
+
+
+/* SHADOW.- Crea un elemento visiblemente duplicado de su elemento origen */
+.shadow-one {
+    width: 100px;
+    height: 100px;
+    margin: 100px auto;
+    background: royalblue;
+    /* 
+        x = posicionamiento horizontal
+        y = posicionamiento vertical
+        d = difuminado
+        e = expancion de tamaño
+        (todo desde su elemento origen)
+        !!!!!!!!! box-shadow: x y d e color;  !!!!!!!!!!
+    */
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.5);
+    /* inset para que invierta la sombra respecto a su origen */
+}
