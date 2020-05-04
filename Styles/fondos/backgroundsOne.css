@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.box-clip-origin {
+    width: 1200px;
+    height: 600px;
+    margin: 100px auto;
+    background-image: url(../../Files/teclado_nocturno.jpg);
+    /* background clip indica donde se dibujara la imagen, desde el borde,
+    o padding, o desde el contenido */
+    background-clip: content-box;
+    /* background origin indica desde donde se dibujara la imagen, desde el borde,
+    o padding, o desde el contenido */
+    background-origin: border-box;
+    padding: 60px;
+    border: 20px solid red;
+    border-radius: 10px;
+}
+
+.box-size {
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    background-image: url(../../Files/teclado_nocturno.jpg);
+    /* Size tiene las siguientes propiedades y solo sirve para background image
+    - 100% del ancho de su caja y el alto se calcula automaticamente o 100 100%
+    - contain, se estirara todo lo posible en su contenedor
+    - cover, estirara o utilizara todo el campo de su caja contenedora
+    */
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: 10px solid red;
+    
+}
+
+.box-position {
+    width: 600px;
+    height: 300px;
+    margin: 100px auto;
+    background-image: url(../../Files/teclado_nocturno.jpg);
+    outline: 10px solid red;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    /* Position, indica desde donde se empezara a dibujar una imagen.
+    Puede recibir valores
+    - unidad X unidad Y para hacer como margin des de dichos ejes 
+    - para eje X (left, center, right)  para eje Y (top, center, bottom) 
+    - para eje X (left, center, right) unidad X para eje Y (top, center, bottom) unidad Y */
+    background-position: right 25px bottom 25px;
+
+    /* Attachment, nos sirve para que un backgorund de fondo de la pagina 
+    sea fijo y no se vea alterado con el scroll
+    background-attachment: fixed;
+    */
+}

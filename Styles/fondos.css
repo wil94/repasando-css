@@ -1,0 +1,18 @@
+body {
+    /* Color de fondo, el fondo va debajo de la imagen */
+    background-color: green;
+
+    /* background-image y repeat */
+    background-image: url(../Files/FondoInicioUno.jpg);
+    /* Repeat... (repeat(default), no-repeat, repeat-x, repeat-y) */
+    background-repeat: no-repeat;
+}
+
+h1 {
+    color: honeydew;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
