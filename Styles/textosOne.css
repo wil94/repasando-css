@@ -1,0 +1,65 @@
+/* em-> es el tamaño de su padre o contexto
+rem-> es el tamaño de la raiz de html*/
+
+/* Indent, crea un espacio en la primera fila de una parrafo :) */
+/* text-indent: 2em; */
+
+/* LineHeight, Es como la sangria vertical entre lineas de un parrafo */
+/* line-height: 1.5; */
+
+/* centreado verticalmente de unh texto solo puede hacer si sera una sola linea!!!
+el line-height debe ser igual a la altura de su contenedor*/
+.line-height-div {
+    width: 300px;
+    height: 300px;
+    background: yellow;
+    text-align: center;
+    line-height: 300px;
+}
+
+/* letter and word spacing, espacio entre letra a letra y palabra a palabra.
+    letter-spacing: 1em;
+    word-spacing: 1em;
+*/
+
+h2 {
+    text-align: center;
+    text-shadow: 1px 1px 5px green;
+}
+
+/* White space
+-pre, dibuja el texto igual que en el codigo
+-nowrap, mantiene todo el parrafo en una sola linea
+-pre-wrap, similar a normal o defualt
+*/
+.white-sp {
+    white-space: pre-wrap;
+}
+
+
+.desbordamiento {
+    width: 70px;
+    margin: 2em auto;
+    border: 10px solid black;
+    /* Cuando el texto se desborda de su contenedor, estas propiedades nos da la
+    posibilidad de que corte la palabra que se esta desbordando sea cortada y
+    se coloque con 3 puntos */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-vertical {
+    /* Verticla de izq a der */
+    writing-mode: vertical-lr;
+    /* Colocar las letras en sentido de arriba hacia abajo letra a letra */
+    text-orientation: upright;
+}
+
+.text-transformation {
+    /*
+    -uppercase, todo mayusculas
+    -lowercase, // minusculas
+    -capitalize, Cada primera letra de cada palabra es mayuscula
+    */
+    text-transform: capitalize;
+}
