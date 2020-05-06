@@ -1,0 +1,122 @@
+.Header {
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: var(--header-height);
+    text-align: center;
+    background-color: var(--first-color);
+    color: var(--border-color);
+    font-size: 1.25rem;
+}
+
+.Main {
+    /* calc para realizar operaciones matematicas */
+    padding-top: calc(var(--header-height) + 1rem);
+    margin: 0 auto;
+    max-width: var(--max-width);
+}
+
+.Main h2 {
+    color: var(--third-color);
+}
+
+.Main article {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+    /* transition, controla el cambio que se vera cuando se aplique el hover
+    -all, a todos las propiedades posibles,
+    .5... tiempo de la transition,
+    ease-out, aceleracion del inicio de transicion.
+     */
+    transition: all .5s ease-out;
+}
+
+/* Es importante recordar que para las pseudoclases es mejor usar :pseudoclase
+y para los pseudoelementos ::pseudoelemento.
+    para estas pseudoclases el orden en el que van si importan y debe ser el siguiente:
+    - :link... (para enlaces, que aun no se visitaron)
+    - :visited... (cuando ya se visito un enlace)
+    - :hover... (cuando el cursor pasa sobre el elemento)
+    - :active... (cuando se presiona sobre el elemento)
+*/
+
+.Main article:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+.Main article:active {
+    background-color: var(--second-color);
+    color: var(--dark-color);
+}
+
+a {
+    color: var(--second-color-alt);
+    transition: color .3s ease-in;
+}
+
+a:hover {
+    color: var(--first-color-alt);
+}
+
+.Modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--third-color-rgba);
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+/* Target se activa cuando exista #idElemento en la URL, cuando
+no se desactiva */
+.Modal:target {
+    display: flex;
+}
+
+.Modal-box {
+    width: 50%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent-color);
+}
+
+.Modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* not, se encargara de aplicar ciertos estilos a todos los elementos especificados,
+en este caso los submit */
+.Modal input:not([type="submit"]) {
+    margin-bottom: .5rem;
+    padding: .5rem;
+    border:thin solid var(--second-color);
+    background-color: var(--body-bg);
+    color: var(--first-color);
+}
+
+/* Estilos solo para el boton del formulario del modal */
+.Modal input[type="submit"] {
+    width: 50%;
+    margin: 0 auto .5rem;
+    padding: .5rem .25rem;
+    border: 0;
+    border-radius: .25rem;
+    background-color: var(--first-color);
+    color: var(--body-bg);
+    transition: all .3s ease-in;
+}
+
+.Modal input[type="submit"]:hover {
+    background-color: var(--dark-color);
+}
