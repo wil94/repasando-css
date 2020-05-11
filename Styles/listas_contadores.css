@@ -1,0 +1,48 @@
+/* Span son elementos inline, pero cambiaremos su forma a list-item,
+siendo como <ul>... */
+
+span {
+    display: list-item;
+}
+
+/* ul, ol {
+    outline: 1px solid #000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+li {
+    border: 1px solid red;
+    margin-bottom: 10px;
+} */
+
+/* Contadores */
+/* Creando un contador, como una variable, debe estar en el contenedor */
+.Chapters {
+    counter-reset: chapters;
+}
+/* en chapterItem se ira aumentando cada vez que haya una class="chapter" */
+.chapter {
+    counter-increment: chapterItem;
+}
+/* Mostrando cada elemento contado, a partir de este punto podemos, manipular
+sus contadores, darles color espacio, margin, etc. */
+.chapter::before {
+    content: counter(chapterItem) ". ";
+    color: sienna;
+}
+
+
+/* Contadores en listas anidadas */
+ol {
+    counter-reset: listItem;
+}
+
+li {
+    counter-increment: listItem;
+    list-style: none;
+}
+
+li::before {
+    content: counters(listItem, '.') '. ';
+}
