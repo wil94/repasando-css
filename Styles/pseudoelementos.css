@@ -1,0 +1,58 @@
+/* Un pseudoelemento se declara con un par de dos puntos 
+- ::first-line, aplicara estilos a la primera linea de un texto.
+- ::first-letter, (NO APLICA A ELEMENTOS INLINE!!!!) aplica estilos a la primera
+- ::before y ::after, crearan contenido "content", imprimiran strings, imagenes... 
+antes (before) o despues (after) de un elemento, estos textos generados no
+pueden copiarse en el navegador.
+letra de un parrafo.
+*/
+
+.first-ln::first-line {
+    color: red;
+}
+
+.first-let::first-letter {
+    color: royalblue;
+    font-size: 2em;
+    float: left;
+}
+
+h3::before {
+    content: '¿' /* o url() para imagenes*/;
+}
+
+h3::after {
+    content: '?';
+}
+
+/* Ejercicio de formateando monedas */
+.usd::before {
+    content: "$ ";
+}
+.bs::before {
+    content: "Bs ";
+}
+.pen::before {
+    content: "S/ ";
+}
+
+/*Animacion de subrayado*/
+#und {
+    display: table;
+}
+
+.unr-ln::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: sienna;
+    /* (tamaño en X, tamaño en Y) */
+    transform: scale(0, 1);
+    transform-origin: center left;
+    transition: transform .25s;
+}
+
+#und:hover::after {
+    /* (tamaño en X, tamaño en Y) */
+    transform: scale(1, 1);
+}
