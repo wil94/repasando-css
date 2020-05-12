@@ -1,0 +1,87 @@
+/*
+-color, color de los textos
+-background-color, color del fondo 
+-currentcolor, llamara al color declarado en algun estilo
+"transparent es utilizado cuando no se requiere ver el elemento pero que este alli"
+*/
+h2 {
+    color: forestgreen;
+    border-color: currentColor;
+    border-style: solid;
+}
+
+/* RGBA(red, green, blue, alpha"transparencia"), 
+-cada color tiene valores entre 0 a 255
+-alpha, tiene valores desde 0 a 1, 1 es el color por defecto, y mientras se acerque a 0 sera mas transparente
+*/
+.box-rgba {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    background-color: rgba(220, 110, 88, .3);
+}
+
+/* RGB(red, green, blue) en hexadecimal, quiere decir que para cada color se 
+utilizara un par de valores que van desde 0, 1, 2... 9, A, B, C, D, E y F.
+Ademas cada par si se repite solo es necesario poner un solo valor de su respectivo
+par para cada color y antes debe ir un #, por ejemplo amarillo es #ffff00, pero
+como sus pares se repiten solo podemos colocar #ff0. */
+.box-hexadecimal {
+    width: 200px;
+    height: 200px;
+    margin: 10px auto;
+    /* Dandole un color amarillo */
+    background-color: #ff0;
+}
+
+/* HSLA mas entendible al ojo humano.
+-Hue, ver descripcion y funcionamiento de circulo cromatico. Tiene valores desde 0 a 360
+-Saturacion, con que intensidad se vera el color, de 0 a 100%
+-Luminosidad, con que brillo se vera el color (0 a 100%) 0-> negro, 50-> color real y 100-> blanco.
+*/
+.box-hsla {
+    width: 600px;
+    height: 200px;
+    margin: 10px auto;
+    background-color: hsla(0, 100%, 50%, 1);
+}
+
+/* Se aplica degradado a los fondos, por lo tanto estos deben tomarse como imagenes
+es decir, background-image y sus props...  */
+.deg-line {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    /* linear-gradient(color 1, color 2,... color n) */
+    background-image: linear-gradient(red, yellow, lime);
+}
+
+.deg-line-stops {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    /* Stops en el degradado
+    pueden ir o no despues de cada color en el gradient, en este caso la caja tendra
+    un color rojo puro hasta el 40% de su tamaño, a partir del 80% sera amarillo puro,
+    lo que quiere decir que el degradado sera visible entre el 40 y 80 % de la caja.
+    */
+    background-image: linear-gradient(red 40%, yellow 80%);
+}
+
+.deg-line-angle {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    /* Indicamos el angulo del degradado, en este caso desde left bottom a
+    top right */
+    background-image: linear-gradient(to top right, red, yellow);
+    /* O tambien con grados "deg" */
+    background-image: linear-gradient(270deg, red, yellow);
+}
+
+.deg-radial {
+    width: 400px;
+    height: 400px;
+    margin: 10px auto;
+    background-image: radial-gradient(red, yellow, lime);
+}
