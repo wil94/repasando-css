@@ -1,0 +1,29 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-size: 2em;
+}
+
+.card {
+    width: 400px;
+    position: relative;
+}
+
+.card-img {
+    display: block;
+    width: 100%;
+}
+
+.card-title {
+    width: 100%;
+    /* tomara la referencia del padre posicionado, en este caso .card que es relative */
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    background-color: rgba(0, 0, 0, .75);
+    text-align: center;
+    padding: .3em;
+}

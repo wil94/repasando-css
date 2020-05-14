@@ -1,0 +1,41 @@
+.menu {
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    background: #333;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    /* display: block; */
+    display: none;
+}
+
+/* Un submenu dentro de un submenu */
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+}
+
+.menu-item {
+    position: relative;
+}
+
+/* Solo se ve el menu del hijo directo */
+.menu-item:hover > .submenu {
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #ddd;
+    display: block;
+    padding: .5em 1em;
+}
