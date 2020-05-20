@@ -1,0 +1,78 @@
+/* Z index es el valor en el eje Z, por ponerlo en ejemplo sera el valor en
+el eje entre el usuario y la pantalla, si no se pone un z index se ira, superponiendo
+el ultimo elemento. 
+- Por defecto todos los elementos tienen z-index de 0
+- Es recomendable que los valores del z-index entre elemento sea de 10 en 10 por lo menos
+- Si hay dos elementos que tengan el mismo valor de z-index, se superpondra el ultimo
+elemento de acuerdo al flujo
+- Z-index se aplica a elementos posicionados
+- Cuando se hace transform a un elemento este ya tiene z-index
+- Si el padre de un elemento ya tiene definido su z-index, sus hijos nunca podran
+ponerse por detras de éste, ya que siempre iran por encima de el en la capa de apilamiento
+*/
+
+.dad {
+    width: 500px;
+    height: 500px;
+    background: hsla(60, 100%, 50%, .5);
+    margin-bottom: 1em;
+}
+
+.son {
+    --size: 150px;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    line-height: var(--size);
+    font-size: 3em;
+    position: absolute;
+    opacity: .8;
+}
+
+.son:first-child {
+    background: hsl(100, 100%, 50%);
+    z-index: 1;
+}
+
+.son:nth-child(2) {
+    background: hsl(180, 100%, 50%);
+    top: 50px;
+    left: 50px;
+    z-index: 50;
+}
+
+.son:last-child {
+    background: hsl(270, 100%, 50%);
+    top: 100px;
+    left: 100px;
+    z-index: 10;
+}
+
+.dad-two {
+    width: 500px;
+    height: 500px;
+    background: yellow;
+    position: relative;
+    /* overflow hidden ocultara todo lo que escape de las dimensiones de este
+    contenedor padre, como sale del contenendor por su top y left, son-two estara
+    oculto. */
+    overflow: hidden;
+}
+
+.son-two {
+    width: 250px;
+    height: 250px;
+    background: red;
+    text-align: center;
+    color: white;
+    line-height: 250px;
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+
+/* Haciendo aparecer son-two cuando se pase el cursor sobre el padre */
+.dad-two:hover .son-two {
+    top: 125px;
+    left: 125px;
+}

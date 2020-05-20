@@ -1,0 +1,48 @@
+/* FIXED
+-Se ignora en el flujo respecto de los demas elementos
+-Su referencia es el viewport
+VIEWPORT (La parte que se esta visualizando de la pagina, es decir lo que vemos aun
+teniendo scroll)
+-Al elemento aplicado con fixed se le quitara el display en bloque, sino se
+convertira en linea, y sus dimensiones seran de acuerdo ala contenido.
+-No se mueve en el scroll
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    background: yellow;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 4rem;
+}
+
+.logo {
+    height: 3rem;
+    display: block;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
+/* Como ya trabajamos con el header de la pagina, para trabajar
+el body de la misma, es aconsejable que darle el margen a todo
+el body del tamaño del header, asi no habran superposiciones */
+body {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+}
+
+/* Para darle el margin del tamaño del header cuando se seleccione un
+capitulo en la pagina */
+:target {
+    padding-top: 4rem;
+}
+
+main {
+    padding-top: .7rem;
+}
